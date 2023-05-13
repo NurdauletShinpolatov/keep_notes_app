@@ -1,12 +1,117 @@
 :root {
   --blue: #4094f7;
+  --light-gray: #f1f3f4;
+  --darker-gray: #dfdfdf;
+  --font-color: #7a7e82;
+  --dark-gray: #57544b;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(226, 226, 226);
-  font-family: 'Quicksand';
+  background: #ffffff;
+  color: var(--dark-gray);
+  font-family: 'Poppins';
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ================================= header ====================================== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icon__bg {
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  border-radius: 50%;
+  color: var(--font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon__bg:hover {
+  background: var(--light-gray);
+}
+
+.current__label {
+  font-size: 24px;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  width: 545px;
+  height: 48px;
+  background: var(--light-gray);
+  border-radius: 8px;
+}
+
+.search__icon {
+  margin: 0 0.5rem;
+  font-size: 24px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search__icon:hover {
+  background: var(--darker-gray);
+}
+
+.search__input {
+  font-size: 16px;
+  background: transparent;
+  flex-grow: 1;
+}
+
+/* ================================= main ====================================== */
+.main {
+  display: grid;
+  grid-template-columns: 280px auto;
+}
+
+.sidebar {
+  border-right: 1px solid var(--darker-gray);
+}
+
+.sidebar__elem {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  gap: 1rem;
+  padding-left: 1rem;
+  border-radius: 0 24px 24px 0;
+  cursor: pointer;
+}
+
+.elem__title {
+  font-size: 18px;
+}
+
+.sidebar__elem:hover {
+  background: var(--light-gray);
 }
 
 /* ================================= block ====================================== */
@@ -72,47 +177,6 @@ body {
 .task__checkbox {
   cursor: pointer;
 }
-
-/* ==================== filter ========================= */
-.filter__by-status {
-  padding: 1rem 1rem;
-  font-weight: 500;
-}
-.filterByStatus-label {
-  margin-right: 1rem;
-}
-.filterByStatus {
-  border: 1px solid #e7e7e7;
-  border-radius: 8px;
-  padding: 4px;
-}
-
-/* =========================== pagination ================================ */
-.pagination {
-  padding: 5px 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.numOfTasks {
-  padding: 5px;
-  width: 45px;
-  border: 1px solid #e7e7e7;
-  border-radius: 4px;
-}
-
-.pages {
-  padding: 5px;
-  margin-right: 10px;
-}
-
-.page {
-  padding: 5px;
-  border: 1px solid #e7e7e7;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
 
 /* =========================== pseudo ================================ */
 
