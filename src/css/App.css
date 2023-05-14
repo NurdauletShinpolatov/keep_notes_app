@@ -114,8 +114,69 @@ body {
   background: var(--light-gray);
 }
 
+/* ================================= addNewTask ====================================== */
+.addNewNote__container {
+  padding: 2rem;
+}
+
+.addNewNote {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 48px;
+  font-size: 24px;
+  width: 600px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.placeholder {
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+/* ================================= notes ====================================== */
+.notes {
+  min-height: 100vh;
+}
+
+.notes__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.note {
+  border: 1px solid var(--darker-gray);
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.note__title {
+  font-size: 16px;
+  margin: 1rem;
+  font-weight: 500;
+}
+
+.note__task {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  padding: 0 1rem;
+  margin: 4px 0;
+}
+
+.note__task-value {
+  font-size: 14px;
+}
+
+
 /* ================================= block ====================================== */
-.block {
+/* .block {
   background: #ffffff;
   width: max-content;
   min-width: 400px;
@@ -176,7 +237,7 @@ body {
 
 .task__checkbox {
   cursor: pointer;
-}
+} */
 
 /* =========================== pseudo ================================ */
 

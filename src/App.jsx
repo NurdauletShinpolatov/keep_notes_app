@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './css/_null.css'
 import './css/App.css'
-import Task from './components/Task/Task';
-import AddNewTask from './components/AddNewTask/AddNewTask';
+// import Task from './components/Task/Task';
+// import AddNewTask from './components/AddNewTask/AddNewTask';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
+import Notes from './components/Notes/Notes';
 
 // cd ../..
 // E:
@@ -12,38 +13,6 @@ import Sidebar from './components/Sidebar/Sidebar';
 // npm start
 
 const App = () => {
-  const [tasks, setTasks] = useState([
-    {
-      value: "Malumotlar LOCAL STORAGE da saqlanadi",
-      id: "a1",
-      completed: false,
-    },
-    {
-      value: "DRAG qilib vaziyfalarning tartiblang",
-      id: "a2",
-      completed: false,
-    },
-    {
-      value: "Ozgartirib bolgach ENTER bosing",
-      id: "a3",
-      completed: true,
-    },
-    { 
-      value: "CRUD", 
-      id: "a4", 
-      completed: true,
-    },
-    {
-      value: "BAJARILGAN vaziyfani belgilasa boladi",
-      id: "a5",
-      completed: false,
-    },
-    {
-      value: "barajilgan/bajarilmaganlarni FILTRLANG",
-      id: "a6",
-      completed: false,
-    }
-  ]);
   const [notes, setNotes] = useState([
     {
         title: "What I need to do today",
@@ -51,7 +20,7 @@ const App = () => {
             {
                 value: "Go to classes",
                 completed: true,
-                id: "a"+Date()
+                id: "a1"
             },
             {
                 value: "Go to Uacademy",
@@ -74,17 +43,17 @@ const App = () => {
             {
                 value: "Go to classes",
                 completed: true,
-                id: "a"+Date()
+                id: "a2"
             },
             {
                 value: "Go to Uacademy",
                 completed: false,
-                id: "a12047236154" // which is the result of "a"+Date() (or Date.now())
+                id: "a120472d36154" // which is the result of "a"+Date() (or Date.now())
             },
             {
                 value: "Cook dinner",
                 completed: false,
-                id: "a203945748"
+                id: "a2039e45748"
             }
         ],
         edited: 12/5/2023,
@@ -92,22 +61,22 @@ const App = () => {
         labels: ["Today"]
     },
     {
-        title: "",
+        title: "asd",
         tasks: [
             {
                 value: "Go to classes",
                 completed: true,
-                id: "a"+Date()
+                id: "a"
             },
             {
                 value: "Go to Uacademy",
                 completed: false,
-                id: "a12047236154" // which is the result of "a"+Date() (or Date.now())
+                id: "a12047236154r" // which is the result of "a"+Date() (or Date.now())
             },
             {
                 value: "Cook dinner",
                 completed: false,
-                id: "a203945748"
+                id: "a203945748t"
             }
         ],
         edited: 12/5/2023,
@@ -115,16 +84,9 @@ const App = () => {
         labels: ["Family", "University"]
     },
   ])
-
   const [labels, setLabels] = useState(["University", "Family", "Work", "Today"]);
-
   const [trash, setTrash] = useState([]);
-  
   const [archive, setArchive] = useState([]);
-
-  const tasksJsx = tasks.map((item) => (
-    < Task key={item.id} item={item} setTasks={setTasks} />
-  ))
 
   // min = 1, max = 9
   return (
@@ -140,12 +102,7 @@ const App = () => {
             archive={archive}
             setArchive={setArchive}
           />
-          <div className="notes">
-            <div className="block">
-              <AddNewTask setTasks={setTasks} />
-              <ul className="tasks__container">{tasksJsx}</ul>
-            </div>
-          </div>
+          <Notes notes={notes} setNotes={setNotes} />
         </div>
       </div>
     </>
