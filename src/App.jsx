@@ -15,6 +15,7 @@ import Notes from './components/Notes/Notes';
 const App = () => {
   const [notes, setNotes] = useState([
     {
+        id: "n1",
         title: "What I need to do today",
         tasks: [
             {
@@ -38,6 +39,7 @@ const App = () => {
         labels: ["University", "Work", "Today"]
     },
     {
+        id: "n2",
         title: "Do not forget",
         tasks: [
             {
@@ -61,6 +63,7 @@ const App = () => {
         labels: ["Today"]
     },
     {
+        id: "n3",
         title: "asd",
         tasks: [
             {

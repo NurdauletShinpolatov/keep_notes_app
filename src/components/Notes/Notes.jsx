@@ -2,6 +2,7 @@ import React from 'react'
 import AddNewNote from '../AddNewNote/AddNewNote'
 
 const ex = {
+    id: "n1",
     title: "What I need to do today",
     tasks: [
         {
@@ -27,10 +28,14 @@ const ex = {
 
 const Notes = (props) => {
     const {notes, setNotes} = {...props};
-    console.log(notes);
+
+    const openNote = (id) => {
+        
+    }
+
     const notesJSX = notes.map((note) => (
         <>
-            <div className="note">
+            <div key={note.id} onClick={() => openNote(note.id)} className="note">
                 <h2 className="note__title">
                     {note.title}
                 </h2>

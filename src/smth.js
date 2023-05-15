@@ -1,5 +1,6 @@
 notes = [
     {
+        id: "n1",
         title: "What I need to do today",
         tasks: [
             {
@@ -23,6 +24,7 @@ notes = [
         labels: ["University", "Work", "Today"]
     },
     {
+        id: "n1234",
         title: "Do not forget",
         tasks: [
             {
@@ -46,6 +48,7 @@ notes = [
         labels: ["Today"]
     },
     {
+        id: "n1235",
         title: "",
         tasks: [
             {
