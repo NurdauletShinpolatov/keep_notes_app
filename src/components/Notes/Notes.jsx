@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AddNewNote from '../AddNewNote/AddNewNote'
+import OpenNote from '../OpenNote/OpenNote';
 
 const ex = {
     id: "n1",
@@ -8,17 +9,17 @@ const ex = {
         {
             value: "Go to classes",
             completed: true,
-            id: "a1"
+            id: "t1"
         },
         {
             value: "Go to Uacademy",
             completed: false,
-            id: "a12047236154" // which is the result of "a"+Date() (or Date.now())
+            id: "t12047236154" // which is the result of "a"+Date() (or Date.now())
         },
         {
             value: "Cook dinner",
             completed: false,
-            id: "a203945748"
+            id: "t203945748"
         }
     ],
     edited: 13/4/2023,
@@ -28,10 +29,12 @@ const ex = {
 
 const Notes = (props) => {
     const {notes, setNotes} = {...props};
+    const [selectedNote, setSelectedNote] = useState("");
 
     const openNote = (id) => {
-        
+        setSelectedNote(id);
     }
+    console.log("notes");
 
     const notesJSX = notes.map((note) => (
         <>
@@ -41,12 +44,12 @@ const Notes = (props) => {
                 </h2>
                 {
                     note.tasks.map((task) => (
-                        <div className="note__task">
+                        <div key={task.id} className="note__task">
                             {
                                 task.completed ? (
-                                    <i class='bx bx-checkbox' ></i>
-                                ) : (
                                     <i class='bx bx-checkbox-checked' ></i>
+                                ) : (
+                                    <i class='bx bx-checkbox' ></i>
                                 )
                             }
                             <p className='note__task-value'>
@@ -66,6 +69,13 @@ const Notes = (props) => {
                 <div className="notes__container">
                     {notesJSX}
                 </div>
+                {
+                    selectedNote != "" ?(
+                        <OpenNote selectedNote={selectedNote} setSelectedNote={setSelectedNote} notes={notes} setNotes={setNotes} />
+                    ):(
+                        <></>
+                    )
+                }
             </div>
         </>
     )

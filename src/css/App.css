@@ -17,6 +17,7 @@ body {
 .wrapper {
   width: 100%;
   min-height: 100vh;
+  height: 100%;
 }
 
 /* ================================= header ====================================== */
@@ -114,7 +115,7 @@ body {
   background: var(--light-gray);
 }
 
-/* ================================= addNewTask ====================================== */
+/* ================================= addNewNote ====================================== */
 .addNewNote__container {
   padding: 2rem;
 }
@@ -173,6 +174,93 @@ body {
 .note__task-value {
   font-size: 14px;
 }
+
+/* ================================= open note ====================================== */
+.background {
+  background: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.openNote {
+  margin: 10rem;
+  background: #ffffff;
+  min-width: 50%;
+  min-height: 50vh;
+  border-radius: 8px;
+}
+
+.noteTitle {
+  font-size: 22px;
+  padding: 1.5rem 1rem;
+}
+
+.noteTasks {
+  
+}
+
+.noteTask {
+  display: flex;
+  height: 35px;
+  padding: 0 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 24px;
+}
+.noteTask:hover {
+  border: 1px solid var(--darker-gray);
+}
+
+.reOrderTask {
+  color: #ffffff;
+}
+.noteTask:hover .reOrderTask {
+  color: var(--dark-gray);
+}
+
+.deleteTask {
+  color: #ffffff;
+}
+.noteTask:hover .deleteTask {
+  color: var(--dark-gray);
+}
+
+.noteTask__focused {
+  border: 1px solid var(--darker-gray);
+}
+.addNewTask__focused .deleteTask, .addNewTask__focused .reOrderTask {
+  color: var(--dark-gray);
+}
+
+.noteTask__value {
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+.addNewTaskDiv {
+  padding-left: calc(1.5rem + 24px);
+  padding-right: 1rem;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 35px;
+}
+.addNewTask__value {
+  flex-grow: 1;
+}
+.addNewTask__value::placeholder {
+  font-size: 16px;
+}
+.addNewTask__focused {
+  border: 1px solid var(--darker-gray);
+}
+
 
 
 /* ================================= block ====================================== */

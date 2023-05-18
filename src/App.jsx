@@ -90,7 +90,7 @@ const App = () => {
   const [labels, setLabels] = useState(["University", "Family", "Work", "Today"]);
   const [trash, setTrash] = useState([]);
   const [archive, setArchive] = useState([]);
-
+  console.log("App");
   // min = 1, max = 9
   return (
     <>
